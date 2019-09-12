@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.1.js"
+    ></script>
+    <script type="text/javascript" src="http://127.0.0.1:3000/chat/js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="http://127.0.0.1:3000/chat/css"
+    />
+  </head>
+  <body>
+    <div class="View">
+      <p id="client_text"></p>
+      <p id="server_text"></p>
+    </div>
+
+    <ul id="messages"></ul>
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+  </body>
+</html>
