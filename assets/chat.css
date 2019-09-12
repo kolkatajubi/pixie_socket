@@ -6,20 +6,20 @@
 body {
   font: 13px Helvetica, Arial;
 }
-form {
+#chat-send-div {
   background: #000;
   padding: 3px;
   position: fixed;
   bottom: 0;
   width: 100%;
 }
-form input {
+#chat-send-div input {
   border: 0;
   padding: 10px;
   width: 90%;
   margin-right: 0.5%;
 }
-form button {
+#chat-send-div button {
   width: 9%;
   background: rgb(130, 224, 255);
   border: none;
@@ -36,7 +36,7 @@ form button {
 #messages li:nth-child(odd) {
   background: #eee;
 }
-#client_text {
+#client-text {
   margin-left: 511px;
   margin-top: 10px;
   padding: 5px 6px 5px 8px;
@@ -46,7 +46,7 @@ form button {
   border-radius: 5px;
   background-color: #da81eb;
 }
-#server_text {
+#server-text {
   margin-left: 25px;
   margin-top: 10px;
   padding: 5px 6px 5px 8px;

@@ -7,12 +7,13 @@
     <title>Document</title>
     <script
       type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+      src="https://code.jquery.com/jquery-1.11.1.js"
     ></script>
     <script
       type="text/javascript"
-      src="https://code.jquery.com/jquery-1.11.1.js"
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
     ></script>
+    <script src="https://pixie.jubi.ai/api/pixieapi.js"></script>
     <script
       type="text/javascript"
       src="https://pixie.jubi.ai/chat/chat.js"
@@ -24,14 +25,20 @@
     />
   </head>
   <body>
-    <div class="View">
+    <!-- <div class="View">
       <p id="client_text"></p>
       <p id="server_text"></p>
-    </div>
+    </div> -->
+    <button id="logout">Logout</button>
 
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+    <ul id="messages">
+      <!-- <li class="left-chat"><p></p></li>
+      <li class="right-chat"><p></p></li> -->
+    </ul>
+
+    <div id="chat-send-div">
+      <input id="chat-input" autocomplete="off" />
+      <button id="chat-send">Send</button>
+    </div>
   </body>
 </html>
