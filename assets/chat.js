@@ -2,6 +2,8 @@ $(document).ready(() => {
   (async () => {
     let checkin = await pixieapi.checkLogin();
     if (checkin.status == "success") {
+      $("#signedin-div").show();
+      $("#loading-div").hide();
       return;
     }
     window.location.replace("https://pixie.jubi.ai/");
