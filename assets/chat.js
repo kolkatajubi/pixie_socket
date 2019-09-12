@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  var client = io("https://pixie.jubi.ai", { path: "/chat/socket.io" });
+  var client = io("https://pixie.jubi.ai", { path: "/chat/socket" });
   client.on("reply", function(msg) {
     $("#server_text").text(msg);
   });
