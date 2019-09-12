@@ -2,10 +2,9 @@ var express = require("express");
 var app = express();
 var http = require("http").createServer(app);
 var io = require("socket.io")(http, {
-  path: "/socket",
-  transports: ["websocket"]
+  path: "/socket"
 });
-
+io.set("transports", ["websocket"]);
 app.get("/signin", function(req, res) {
   res.sendFile(__dirname + "/assets/signin.html");
 });
