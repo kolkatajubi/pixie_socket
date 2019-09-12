@@ -1,5 +1,8 @@
 $(document).ready(() => {
-  var client = io("https://pixie.jubi.ai", { path: "/chat/socket" });
+  var client = io("wss://pixie.jubi.ai", {
+    path: "/chat/socket",
+    transports: ["websocket"]
+  });
   client.on("reply", function(msg) {
     $("#server_text").text(msg);
   });
