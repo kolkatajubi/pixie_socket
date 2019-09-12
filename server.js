@@ -13,7 +13,7 @@ app.get("/", function(req, res) {
 });
 
 http.listen(4125, function() {
-  console.log("listening on *:3000");
+  console.log("listening on 4125");
 });
 io.on("connection", function(server) {
   server.on("chat message", function(msg) {
