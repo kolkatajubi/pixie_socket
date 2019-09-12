@@ -6,18 +6,12 @@ app.get("/signin", function(req, res) {
   res.sendFile(__dirname + "/assets/signin.html");
 });
 
-app.get("/chat", function(req, res) {
+app.use(express.static("assets"));
+app.get("/", function(req, res) {
   res.sendFile(__dirname + "/assets/chat.html");
 });
 
-app.get("/chat/js", function(req, res) {
-  res.sendFile(__dirname + "/assets/chat.js");
-});
-app.get("/chat/css", function(req, res) {
-  res.sendFile(__dirname + "/assets/chat.css");
-});
-
-http.listen(3000, function() {
+http.listen(4125, function() {
   console.log("listening on *:3000");
 });
 io.on("connection", function(server) {
