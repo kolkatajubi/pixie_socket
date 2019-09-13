@@ -21,7 +21,7 @@ $(document).ready(() => {
     let message = $("#chat-input").val();
     setTimeout(function() {
       client.emit("chat-to-server", message);
-    }, 3000);
+    }, 5000);
 
     $("#chat-input").val("");
     //to display sent message- to push right message
