@@ -17,11 +17,12 @@ http.listen(4125, function() {
 
 io.on("connection", socket => {
   console.log(users);
+  console.log("connected");
   //users.push({ id: socket.id, object: socket });
 
   io.on("chat-to-server", data => {
-    console.log(data);
-    if (users.length > 0) io.emit("chat-to-client", data);
+    console.log("ping");
+    io.emit("chat-to-client", data);
   });
 });
 

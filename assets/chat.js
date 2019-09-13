@@ -10,10 +10,10 @@ $(document).ready(() => {
   })();
 
   var client = io("https://pixie.jubi.ai", {
-    path: "/chat/socket"
+    path: "/socket"
   });
   client.on("chat-to-client", function(data) {
-    if (data.from == localStorage.getItem("username")) {
+    if (data.from != localStorage.getItem("username")) {
       console.log("MESSAGE RECIVED" + JSON.stringify(data.message_content));
       $("#messages").append(
         '<li class="left-chat"><p>' + data.message_content + "</p></li>"
