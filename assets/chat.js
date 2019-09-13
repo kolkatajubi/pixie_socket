@@ -10,7 +10,7 @@ $(document).ready(() => {
   })();
 
   var client = io("https://pixie.jubi.ai", {
-    path: "/socket"
+    path: "/chat/socket"
   });
   client.on("chat-to-client", function(data) {
     if (data.from != localStorage.getItem("username")) {
