@@ -3,7 +3,7 @@ var app = express();
 var http = require("http").createServer(app);
 let users = [];
 var io = require("socket.io")(http, {
-  path: "/"
+  path: "/socket"
 });
 
 app.use(express.static("assets"));
@@ -20,7 +20,7 @@ io.on("connection", socket => {
   console.log("connected");
   //users.push({ id: socket.id, object: socket });
 
-  io.on("chat-to-server", data => {
+  socket.on("chat-to-server", data => {
     console.log("ping");
     io.emit("chat-to-client", data);
   });

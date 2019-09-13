@@ -13,11 +13,17 @@ $(document).ready(() => {
     path: "/chat/socket"
   });
   client.on("chat-to-client", function(data) {
+    console.log("MESAAGE"+JSON.stringify(data))
     if (data.from != localStorage.getItem("username")) {
+      
+      try {
       console.log("MESSAGE RECIVED" + JSON.stringify(data.message_content));
       $("#messages").append(
         '<li class="left-chat"><p>' + data.message_content + "</p></li>"
       );
+} catch(e){
+	console.log(e)
+}
     }
     //to display received message - to push left message
   });
