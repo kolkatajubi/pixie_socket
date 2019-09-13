@@ -60,7 +60,7 @@ body {
   display: none;
 }
 
-.left-chat {
+/*.left-chat {
   float: right;
   border-style: solid;
   border-radius: 5px;
@@ -83,4 +83,29 @@ body {
   font-size: small;
   border-color: lightgray;
   margin-top: 10px;
+}*/
+
+.left-chat,
+.right-chat {
+  line-height: 100%;
+  display: block;
+  position: relative;
+  padding: 0.25em 0.5em;
+  background: pink;
+  border: red solid 3px;
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  border-radius: 11px;
+  margin-bottom: 2em;
+  clear: both;
+  max-width: 50%;
+}
+
+.left-chat {
+  float: left;
+  margin-right: 10%;
+}
+.right-chat {
+  float: right;
+  margin-left: 10%;
 }
