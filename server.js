@@ -3,7 +3,7 @@ var app = express();
 var http = require("http").createServer(app);
 let users = [];
 var io = require("socket.io")(http, {
-  path: "/socket"
+  path: "/"
 });
 
 app.use(express.static("assets"));
