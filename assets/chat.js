@@ -19,7 +19,10 @@ $(document).ready(() => {
 
   $("#chat-send").click(() => {
     let message = $("#chat-input").val();
-    client.emit("chat-to-server", message);
+    setTimeout(function() {
+      client.emit("chat-to-server", message);
+    }, 3000);
+
     $("#chat-input").val("");
     //to display sent message- to push right message
     $("#messages").append('<li class="right-chat"><p>' + message + "</p></li>");
