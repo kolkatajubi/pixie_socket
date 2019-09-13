@@ -12,16 +12,24 @@ $(document).ready(() => {
   var client = io("https://pixie.jubi.ai", {
     path: "/chat/socket"
   });
-  client.on("chat-to-client", function(msg) {
+  client.on("chat-to-client", function(data) {
+    if (data.from !== localStorage.getItem("username")) {
+      console.log("MESSAGE RECIVED" + JSON.stringify(data.message_content));
+      $("#messages").append('<li class="left-chat"><p>' + data + "</p></li>");
+    }
     //to display received message - to push left message
-    $("#messages").append('<li class="left-chat"><p>' + msg + "</p></li>");
   });
 
   $("#chat-send").click(() => {
     let message = $("#chat-input").val();
-    setTimeout(function() {
-      client.emit("chat-to-server", message);
-    }, 5000);
+    client.emit("chat-to-server", {
+      from: localStorage.getItem("username"),
+      message_content: message
+    });
+
+    // setTimeout(function() {
+    //   client.emit("chat-to-server", message);
+    // }, 5000);
 
     $("#chat-input").val("");
     //to display sent message- to push right message
