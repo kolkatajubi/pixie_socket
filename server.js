@@ -19,7 +19,7 @@ io.on("connection", socket => {
   console.log(users);
   //users.push({ id: socket.id, object: socket });
 
-  server.on("chat-to-server", data => {
+  io.on("chat-to-server", data => {
     console.log(data);
     if (users.length > 0) io.emit("chat-to-client", data);
   });
